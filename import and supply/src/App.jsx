@@ -100,78 +100,23 @@ function AppContent() {
       </Routes>
 
       {!hideNavAndFooter && (
-        <footer
-          style={{
-            backgroundColor: "#ffffff",
-            color: "#333333",
-            textAlign: "center",
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "14px",
-            padding: "0.5rem 1rem",
-            borderTop: "3px solid #0A6FBF", // Royal deep purple accent
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              flexWrap: "wrap",
-              gap: "1rem",
-              maxWidth: "1200px",
-              margin: "0 auto",
-            }}
-          >
+        <footer className="site-footer">
+          <div className="footer-container">
             {/* Copyright */}
-            <p
-              style={{
-                margin: 0,
-                fontWeight: 600,
-                fontSize: "16px",
-                color: "#0A6FBF", // Purple text for royal vibe
-                fontFamily: "'Cinzel', serif",
-              }}
-            >
+            <p className="footer-copyright">
               © 2025 HAF Import & Supply
             </p>
 
             {/* Developer / Company info */}
-            <div
-              style={{
-                textAlign: "right",
-                lineHeight: "1.4",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              <p
-                style={{
-                  margin: "0 0 4px 0",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  color: "#ab9027", // Gold accent
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  position: "relative",
-                  display: "inline-block",
-                  fontFamily: "'Cinzel', serif",
-                }}
-              >
+            <div className="footer-developer">
+              <p className="developer-text">
                 Developed By{" "}
-                <span style={{ position: "relative", display: "inline-block" }}>
-                  {/* Crown SVG */}
+                <span className="crown-wrapper">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    fill="#ab9027"
-                    width="16px"
-                    height="14px"
-                    style={{
-                      position: "absolute",
-                      top: "-0.4rem",
-                      left: "-0.2rem",
-                      transform: "rotate(-15deg)",
-                    }}
+                    fill="currentColor"
+                    className="crown-icon"
                   >
                     <path d="M5 16l-3-9 6 5 4-7 4 7 6-5-3 9H5z" />
                   </svg>
@@ -179,15 +124,9 @@ function AppContent() {
                 </span>
                 hebawianTech
               </p>
-              <br />
               <a
                 href="mailto:shebawiantech@gmail.com"
-                style={{
-                  color: "#0A6FBF", // Purple
-                  textDecoration: "none",
-                  fontSize: "12px",
-                  fontFamily: "'Playfair Display', serif",
-                }}
+                className="developer-email"
               >
                 contact@shebawiantech.com
               </a>

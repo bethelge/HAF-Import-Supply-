@@ -1205,7 +1205,8 @@
 .holographic-media-section {
   position: relative;
   padding: 8rem 5%;
-  background-color: #fff;
+  background-color: var(--bg-primary);
+  transition: var(--transition-theme);
 }
 
 .media-portal-gateway {
@@ -1290,8 +1291,9 @@
 
 .cyber-subheader {
   font-size: 1.2rem;
-  color: #333;
+  color: var(--text-secondary);
   letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
 
@@ -1419,14 +1421,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  /* background: linear-gradient(90deg, #007bff, #378d4b, #4ade80); */
-  background-color: #fff;
+  background-color: var(--card-bg);
   backdrop-filter: blur(12px);
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  /* border: 1px solid rgba(0, 243, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1), var(--transition-theme);
 }
 
 @media (min-width: 992px) {
@@ -1548,10 +1549,9 @@
 }
 
 .cyber-badge {
-
   position: relative;
   display: inline-block;
-  background: linear-gradient(135deg, #75f393 0%, #378d4b 60%, #21e6c1 100%);
+  background: var(--gradient-primary);
   padding: 0.5rem 1rem;
   border-bottom-right-radius: 15px;
   border-top-left-radius: 15px;
@@ -1559,7 +1559,7 @@
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #333;
+  color: white;
   text-transform: uppercase;
 }
 
@@ -1590,15 +1590,17 @@
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--text-primary);
   line-height: 1.3;
+  transition: color 0.3s ease;
 }
 
 .cyber-media-desc {
-  color: #333;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 2rem;
   flex-grow: 1;
+  transition: color 0.3s ease;
 }
 
 
@@ -1609,13 +1611,18 @@
   align-items: center;
   text-decoration: none;
   gap: 10px;
-  color: #333;
+  color: var(--color-primary);
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 0.9rem;
   position: relative;
   padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.cyber-link:hover {
+  color: var(--color-primary-dark);
 }
 
 .link-arrow {
@@ -1704,11 +1711,12 @@
 
 .modal-content {
   position: relative;
-  background: #000;
+  background: var(--bg-elevated);
   padding: 1rem;
   max-width: 800px;
   width: 50%;
-  border-radius: 10px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
 }
 
 .modal-video {
@@ -2011,10 +2019,11 @@
   position: relative;
   overflow: hidden;
   padding: 3rem 1rem;
-  background: linear-gradient(135deg, #162447 0%, #1f4068 60%, #21e6c1 100%);
+  background: var(--gradient-hero);
   color: white;
   text-align: center;
   z-index: 1;
+  transition: background 0.3s ease;
 }
 
 .section-header {
@@ -2108,10 +2117,11 @@
 .cta-section {
   text-align: center;
   padding: 3rem 1rem;
-  color: #fff;
+  color: var(--text-inverse);
   position: relative;
   overflow: hidden;
-  background: #1A3055;
+  background: var(--gradient-hero);
+  transition: background 0.3s ease;
 }
 
 .cta-content {

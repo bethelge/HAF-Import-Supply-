@@ -5,9 +5,11 @@ body {
 
 /* Base Styles */
 .about-page {
-  font-family: "Poppins", sans-serif;
-  color: #fff;
+  font-family: var(--font-family);
+  color: var(--text-primary);
   line-height: 1.6;
+  background: var(--bg-primary);
+  transition: var(--transition-theme);
 }
 
 .container {
@@ -69,21 +71,22 @@ body {
 .section-header h2 {
   font-size: 16px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 15px;
+  transition: color 0.3s ease;
 }
 
 .divider {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #007bff, #00bfff);
+  background: var(--gradient-primary);
   border-radius: 2px;
   margin: 15px 0;
 }
 
 .highlight-text {
   font-weight: 600;
-  color: #4ade80;
+  color: var(--color-primary);
 }
 
 /* Stats */
@@ -114,9 +117,10 @@ body {
 /* Mission & Vision Section */
 .mission-vision-section {
   padding: 100px 0;
-  background-color: #f5f9ff;
+  background-color: var(--bg-secondary);
   position: relative;
   overflow: visible;
+  transition: background-color 0.3s ease;
 }
 
 .section-intro {
@@ -126,16 +130,18 @@ body {
 
 .section-title {
   font-size: 1.8rem;
-  color: #1a4188;
+  color: var(--color-secondary);
   margin-bottom: 15px;
   font-weight: 700;
+  transition: color 0.3s ease;
 }
 
 .section-description {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto 30px;
+  transition: color 0.3s ease;
 }
 
 .animated-divider {
@@ -186,13 +192,14 @@ body {
 }
 
 .principle-card {
-  background: white;
-  border-radius: 16px;
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
   padding: 40px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), var(--transition-theme);
 }
 
 .principle-card:hover {
@@ -204,10 +211,10 @@ body {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #007bff, #00bfff);
+  background: var(--gradient-primary);
   color: white;
   padding: 5px 15px;
-  border-radius: 20px;
+  border-radius: var(--radius-full);
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -293,8 +300,9 @@ body {
 
 .principle-card h3 {
   font-size: 1.8rem;
-  color: #1a4188;
+  color: var(--color-secondary);
   margin-bottom: 20px;
+  transition: color 0.3s ease;
 }
 
 .card-divider {
@@ -321,9 +329,10 @@ body {
 
 .principle-card p {
   font-size: 1.1rem;
-  color: #555;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 30px;
+  transition: color 0.3s ease;
 }
 
 .card-footer {
