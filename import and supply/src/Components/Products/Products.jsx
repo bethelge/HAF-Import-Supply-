@@ -102,9 +102,10 @@ const waveAnimation = keyframes`
 const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: #ffffff;
-  color: #2d3747;
-  font-family: "Inter", sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  transition: background 0.3s ease, color 0.3s ease;
 `;
 
 const HeroSection = styled.section`
@@ -116,7 +117,7 @@ const HeroSection = styled.section`
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: #1a3055;
+  background: var(--gradient-hero);
 `;
 
 const WaveBackground = styled.div`
@@ -181,15 +182,26 @@ const CategoryWrapper = styled.div`
   animation-delay: ${(props) => props.$index * 0.1}s;
   opacity: 0;
   position: relative;
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 24px;
     left: 0;
     width: 4px;
-    height: 100%;
-    background: linear-gradient(to bottom, #38b2ac, #4299e1);
+    height: calc(100% - 48px);
+    background: var(--gradient-primary);
     border-radius: 2px;
     transition: all 0.3s ease;
     transform: ${(props) => (props.$hovered ? "scaleY(1.1)" : "scaleY(0.9)")};
@@ -208,18 +220,19 @@ const CategoryTitle = styled.h2`
   font-size: 20px;
   font-weight: 600;
   margin: 0;
-  color: #2d3747;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   gap: 12px;
+  transition: color 0.3s ease;
 `;
 
 const CategoryIcon = styled.span`
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: ${(props) => (props.$hovered ? "#38b2ac" : "#e2e8f0")};
-  color: ${(props) => (props.$hovered ? "white" : "#4299e1")};
+  background: ${(props) => (props.$hovered ? "var(--color-primary)" : "var(--bg-tertiary)")};
+  color: ${(props) => (props.$hovered ? "white" : "var(--color-secondary)")};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -233,11 +246,12 @@ const CategoryIcon = styled.span`
 
 const ProductCount = styled.span`
   font-size: 1rem;
-  color: #4a5568;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 
   span {
     font-weight: 700;
-    color: #38b2ac;
+    color: var(--color-primary);
   }
 `;
 

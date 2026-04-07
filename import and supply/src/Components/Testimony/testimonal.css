@@ -1,10 +1,11 @@
 /* Neo-Testimonials CSS */
 .neo-testimonials {
-  background-color: #fff;
+  background-color: var(--bg-primary);
   min-height: 100vh;
-  font-family: 'Inter', sans-serif;
-  color: #0f172a;
+  font-family: var(--font-family);
+  color: var(--text-primary);
   overflow-x: hidden;
+  transition: var(--transition-theme);
 }
 
 /* Portal Header */
@@ -44,15 +45,15 @@
 }
 
 .glitch-layers {
-  
   position: relative;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: #0f172a;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
   margin-top: 0;
+  transition: color 0.3s ease;
 }
 
 .glitch-layers::before,
@@ -97,15 +98,15 @@
 
 .subtitle-beam {
   font-size: 1.25rem;
-  color: #475569;
+  color: var(--text-secondary);
   position: relative;
   display: inline-block;
+  transition: color 0.3s ease;
 }
 
 .subtitle-beam span {
-  color: #378d4b;
+  color: var(--color-primary);
   font-weight: 600;
-  
 }
 
 /* .subtitle-beam::after {
@@ -138,18 +139,18 @@
 
 .testimonial-hologram {
   position: relative;
-  background: white;
-  border-radius: 20px;
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
   padding: 2.5rem;
-  box-shadow: 
-    0 10px 30px rgba(99, 102, 241, 0.1),
-    0 0 0 1px rgba(0, 0, 0, 0.02);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
   transform: translateY(30px);
   opacity: 0;
   animation: 
     holoRise 0.8s var(--delay) forwards,
     holoFloat 8s ease infinite;
   overflow: hidden;
+  transition: var(--transition-theme);
 }
 
 @keyframes holoRise {
@@ -225,21 +226,24 @@
 .testimonial-quote {
   font-size: 16px;
   line-height: 1.6;
-  color: #475569;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
   font-style: italic;
+  transition: color 0.3s ease;
 }
 
 .client-info h3 {
   font-size: 16px;
-  color: #0f172a;
+  color: var(--text-primary);
   margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
 }
 
 .client-info p {
   font-size: 16px;
-  color: #64748b;
+  color: var(--text-tertiary);
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
 }
 
 .star-rating {
