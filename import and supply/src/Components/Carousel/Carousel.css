@@ -1,0 +1,782 @@
+/* Content */
+.carousel-content {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.main-text {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.sub-text {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-btn {
+  background-color: #1a4188;
+  color: white;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background-color: #12336a;
+}
+
+/* SVG Wave */
+.wave-divider {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+  line-height: 0;
+}
+
+/* Responsive text */
+@media (max-width: 768px) {
+  .main-text {
+    font-size: 2.5rem;
+  }
+
+  .sub-text {
+    font-size: 1.3rem;
+  }
+
+  .carousel-btn {
+    font-size: 0.9rem;
+    padding: 10px 22px;
+  }
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 60px;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.carousel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+/* Add gradient overlay effect */
+.carousel-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(213, 208, 208, 0.4),
+    rgba(60, 120, 180, 0.5)
+  );
+
+  z-index: 1;
+}
+/* Fade-in container */
+.after-carousel {
+  background-color: #0f1f30; /* optional: dark smooth background */
+  padding: 100px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fade-in-content {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease-in-out 1s forwards;
+  text-align: center;
+  color: white;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Example styling */
+.typing-text.first-line,
+.typing-text.second-line {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.cta-primary {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #1a4188; /* match your site theme */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.cta-primary:hover {
+  background-color: #133264;
+}
+
+/* Floating Shapes */
+.floating-shape {
+  position: absolute;
+  opacity: 0.1;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  background-color: #1a4188;
+  border-radius: 50%;
+  top: 10%;
+  left: 15%;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 80px solid #1a4188;
+  top: 60%;
+  left: 25%;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  background-color: #1a4188;
+  top: 30%;
+  right: 15%;
+}
+
+/* Make content sit above overlay */
+.carousel-content {
+  z-index: 2;
+}
+
+/* Update titles for better contrast and size */
+/* Make content sit above overlay */
+.carousel-content {
+  z-index: 2;
+}
+
+/* Main company title */
+.carousel-content {
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+
+  /* NEW: Add left spacing */
+  padding-left: 60px; /* adjust as needed */
+  text-align: left;
+}
+
+.carousel-title span {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.carousel-title span:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+.carousel-title .ampersand {
+  font-size: 3.5rem;
+  color: #ffffff;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.background-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.background-slide.active {
+  opacity: 1;
+}
+
+
+
+.carousel-title span {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.carousel-title span:nth-child(1) { animation-delay: 0.1s; }
+.carousel-title span:nth-child(2) { animation-delay: 0.2s; }
+.carousel-title span:nth-child(3) { animation-delay: 0.3s; }
+.carousel-title span:nth-child(4) { animation-delay: 0.4s; }
+.carousel-title span:nth-child(5) { animation-delay: 0.5s; }
+
+.ampersand {
+  color: #34d399;
+  font-weight: 400;
+}
+
+.carousel-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transition: color 0.2s ease;
+}
+
+.typewriter-cursor {
+  animation: blink 1s infinite;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .carousel-title {
+    font-size: 3.2rem;
+  }
+  
+  .carousel-heading {
+    font-size: 2rem;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 2.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .carousel-heading {
+    font-size: 1.5rem;
+    max-width: 450px;
+    min-height: 2.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-title {
+    font-size: 2rem;
+  }
+  
+  .carousel-heading {
+    font-size: 1.2rem;
+    max-width: 320px;
+    min-height: 2.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Individual word animations */
+.carousel-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFadeIn 0.8s forwards;
+}
+
+.carousel-title span:nth-child(1) {
+  animation-delay: 0.2s;
+} /* "HAF" */
+.carousel-title span:nth-child(2) {
+  animation-delay: 0.4s;
+} /* "IMPORT" */
+.carousel-title .ampersand {
+  color: #6CE489;
+  animation-delay: 0.6s;
+  margin: 0 0.5rem;
+}
+.carousel-title span:nth-child(4) {
+  animation-delay: 0.7s;
+} /* "SUPPLY" */
+.carousel-title span:nth-child(5) {
+  animation-delay: 0.8s;
+} /* "TRADE" */
+
+.carousel-heading {
+  font-size: 1.5rem;
+  font-weight: 400;
+   color: linear-gradient(135deg, #e7e7e7 0%, #0ca123 60%, #f4f4f4 100%);
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards 1s; /* Starts after title */
+}
+
+/* Animations */
+@keyframes slideUpFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional smoother fade */
+.background-slide {
+  transition: opacity 1.5s ease-in-out;
+}
+
+.background-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  filter: brightness(0.5);
+}
+
+.background-slide.active {
+  opacity: 1;
+}
+
+.carousel-content {
+  position: relative;
+  max-width: 600px;
+  text-align: left;
+  color: linear-gradient(135deg, #e7e7e7 0%, #0ca123 60%, #f4f4f4 100%);
+  z-index: 1;
+}
+
+/* .carousel-title {
+  font-family: "Bebas Neue", sans-serif; 
+   color: linear-gradient(135deg, #e7e7e7 0%, #0ca123 60%, #f4f4f4 100%);
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 1.1;
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  letter-spacing: 2px;
+} */
+
+.haf-import,
+.supply-trade {
+  display: block;
+  animation: revealFade 1s ease-out forwards;
+}
+
+.haf-import {
+  font-size: 1em;
+  animation-delay: 0.2s;
+}
+
+.ampersand {
+  display: block;
+  font-size: 2.5rem;
+  color: #00fd98;
+  font-family: "Playfair Display", serif;
+  animation: bounceIn 0.9s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.supply-trade {
+  font-size: 0.9em;
+  animation-delay: 1s;
+}
+
+/* Animations */
+@keyframes revealFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.carousel-heading {
+  font-size: 1.5rem;
+  /* font-weight: 800; */
+  line-height: 1.2;
+  margin-bottom: 0.3rem;
+}
+
+.carousel-text {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.carousel-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+   color: linear-gradient(135deg, #e7e7e7 0%, #0ca123 60%, #f4f4f4 100%);
+}
+
+.carousel-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+
+.primary-button {
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #e6b800;
+}
+
+.secondary-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.secondary-button {
+  background: none;
+  color: white;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.secondary-button:hover {
+  color: #ffcc00;
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 8px;
+  margin-top: 2rem;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background-color: linear-gradient(
+    135deg,
+    #162447 0%,
+    #1f4068 60%,
+    #2142e6 100%
+  );
+  border-radius: 50%;
+  opacity: 0.4;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.indicator.active {
+  opacity: 1;
+}
+
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .carousel-title {
+    font-size: 3.2rem;
+  }
+  
+  .carousel-heading {
+    font-size: 2rem;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-content {
+    top: 45%;
+    width: 95%;
+    padding: 0 15px;
+  }
+  
+  .carousel-title {
+    font-size: 2rem;
+    gap: 0.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .carousel-title span {
+    font-size: 2.5rem;
+  }
+  
+  .carousel-title .ampersand {
+    font-size: 2.2rem;
+  }
+  
+  .carousel-heading {
+    font-size: 1.3rem;
+    max-width: 90%;
+    min-height: 2.8rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-content {
+    top: 40%;
+  }
+  
+  .carousel-title {
+    font-size: 1.8rem;
+    gap: 0.3rem;
+  }
+  
+  .carousel-title span {
+    font-size: 2rem;
+  }
+  
+  .carousel-title .ampersand {
+    font-size: 1.8rem;
+  }
+  
+  .carousel-heading {
+    font-size: 1rem;
+    max-width: 95%;
+    min-height: 2.2rem;
+    line-height: 1.5;
+  }
+}
+
+/* Rest of your existing CSS remains the same */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 60px;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.carousel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Add gradient overlay effect */
+.carousel-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(213, 208, 208, 0.4),
+    rgba(60, 120, 180, 0.5)
+  );
+  z-index: 1;
+}
+
+.background-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  filter: brightness(0.5);
+}
+
+.background-slide.active {
+  opacity: 1;
+}
+
+/* Individual word animations */
+.carousel-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFadeIn 0.8s forwards;
+}
+
+.carousel-title span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.carousel-title span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.carousel-title .ampersand {
+  color: #6CE489;
+  animation-delay: 0.6s;
+  margin: 0 0.5rem;
+}
+.carousel-title span:nth-child(4) {
+  animation-delay: 0.7s;
+}
+.carousel-title span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+/* Animations */
+@keyframes slideUpFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.carousel-title {
+  font-size: 1.8rem;   
+  margin-bottom: 15px;
+}
+
+.carousel-title span {
+  font-size: 2.2rem;   
+}
+
+.carousel-title .ampersand {
+  font-size: 2rem;     
+}
+
+.carousel-heading {
+  font-size: 1.2rem;  
+  line-height: 1.4;
+}

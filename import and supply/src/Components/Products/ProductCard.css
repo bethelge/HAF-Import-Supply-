@@ -1,0 +1,307 @@
+/* 3D Carousel Animation Keyframes */
+@keyframes enterFromLeft {
+  0% {
+    transform: translateX(-100px) scale(0.3) rotateY(-45deg) rotateZ(-15deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0px) scale(1.1) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px) scale(1) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes exitToRight {
+  0% {
+    transform: translateX(0px) scale(1) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(50px) scale(1.1) rotateY(15deg) rotateZ(10deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(100px) scale(0.3) rotateY(45deg) rotateZ(15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes spinAndZoom {
+  0% {
+    transform: scale(0.8) rotateY(-30deg);
+    opacity: 0.7;
+  }
+  25% {
+    transform: scale(1.2) rotateY(-15deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1) rotateY(0deg);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.05) rotateY(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes floatAnimation {
+  0%,
+  100% {
+    transform: translateY(0px) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotateY(2deg);
+  }
+  50% {
+    transform: translateY(-2px) rotateY(-1deg);
+  }
+  75% {
+    transform: translateY(-8px) rotateY(3deg);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 0 0 rgba(56, 178, 172, 0);
+  }
+  50% {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15),
+      0 0 20px rgba(56, 178, 172, 0.3);
+  }
+}
+
+@keyframes imageSpin {
+  0% {
+    transform: scale(1.05) rotateY(-10deg);
+  }
+  50% {
+    transform: scale(1.1) rotateY(5deg);
+  }
+  100% {
+    transform: scale(1.05) rotateY(0deg);
+  }
+}
+
+/* Enhanced Product Card Styles */
+.product-card-3d {
+  width: 100%;
+  max-width: 370px;
+  margin: 0 auto;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: enterFromLeft 0.8s ease-out;
+  animation-delay: calc(var(--card-index, 0) * 0.2s);
+}
+
+.product-card-3d:hover {
+  animation: spinAndZoom 0.6s ease-out, floatAnimation 3s ease-in-out infinite;
+}
+
+.product-card-3d.exiting {
+  animation: exitToRight 0.6s ease-in forwards;
+}
+
+/* Card Container */
+.product-card-3d .card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0f4ff, #e9f0ff);
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-card-3d:hover .card {
+  animation: glowPulse 2s ease-in-out infinite;
+  transform: translateY(-8px) rotateY(5deg);
+}
+
+/* Image Container */
+.product-card-3d .image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.product-card-3d .image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(56, 178, 172, 0.1) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Product Images */
+.product-card-3d .main-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+  transform: scale(1.05);
+}
+
+.product-card-3d .main-img.active {
+  opacity: 1;
+  z-index: 1;
+  animation: imageSpin 0.8s ease-out;
+}
+
+/* Info Section */
+.product-card-3d .info {
+  padding: 1.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.product-card-3d .info h4 {
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  color: #1f2937;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.product-card-3d .info p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  min-height: 48px;
+  line-height: 1.5;
+}
+/* Explore Button */
+.product-card-3d .info button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #38b2ac, #4299e1);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card-3d .info button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.product-card-3d .info button:hover {
+  background: linear-gradient(135deg, #319795, #3182ce);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 20px rgba(56, 178, 172, 0.4);
+}
+
+.product-card-3d .info button:hover::before {
+  left: 100%;
+}
+
+.product-card-3d .info button:active {
+  transform: scale(0.98);
+}
+
+/* Card Glow Effect */
+.product-card-3d .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(56, 178, 172, 0.1),
+    transparent
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card-3d:hover .card::after {
+  opacity: 1;
+}
+
+/* Staggered Animation for Multiple Cards */
+.product-card-3d:nth-child(1) {
+  --card-index: 0;
+}
+.product-card-3d:nth-child(2) {
+  --card-index: 1;
+}
+.product-card-3d:nth-child(3) {
+  --card-index: 2;
+}
+.product-card-3d:nth-child(4) {
+  --card-index: 3;
+}
+.product-card-3d:nth-child(5) {
+  --card-index: 4;
+}
+.product-card-3d:nth-child(6) {
+  --card-index: 5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card-3d {
+    max-width: 320px;
+  }
+
+  .product-card-3d .info {
+    padding: 1rem;
+  }
+
+  .product-card-3d .info h4 {
+    font-size: 1.1rem;
+  }
+
+  .product-card-3d .info p {
+    font-size: 0.9rem;
+  }
+}
